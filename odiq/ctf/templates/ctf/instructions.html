@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>0SINT MANIAC</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap4-neon-glow.min.css' %}">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+
+<body class="imgloaded">
+    <div class="glitch">
+        <div style="position: fixed;" class="glitch__img"></div>
+        <div style="position: fixed;" class="glitch__img"></div>
+        <div style="position: fixed;" class="glitch__img"></div>
+        <div style="position: fixed;" class="glitch__img"></div>
+        <div style="position: fixed;" class="glitch__img"></div>
+    </div>
+    <div class="navbar-dark text-white">
+        <div class="container">
+            <nav class="navbar px-0 navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a href="/" class="pl-md-0 p-3 text-decoration-none text-light">
+                            <h3 class="bold"><span class="color_danger"><img src="{% static '/images/logo.png' %}" alt="Your Logo" class="logo" height="60px" width="50px"> OSINT</span><span class="color_white">MANIAC</span></h3>
+                        </a>
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <a href="/about" class="p-3 text-decoration-none text-light bold">About</a>
+                        <a href="/scoreboard" class="p-3 text-decoration-none text-light bold">Scoreboard</a>
+                        <a href="/profil" class="p-3 text-decoration-none text-light bold">Profil</a>
+                        {% if user.is_authenticated %}
+                            <a href="/logout" class="p-3 text-decoration-none text-light bold">Logout</a>
+                        {% else %}
+                            <a href="/login" class="p-3 text-decoration-none text-light bold">Login</a>
+                        {% endif %}    
+                    </div>
+                </div>
+            </nav>
+
+        </div>
+    </div>
+    {% if user.is_authenticated %}
+    <div class="jumbotron bg-transparent mb-0 pt-3 radius-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <h1 class="display-1 bold color_white content__title text-center"><span class="color_danger">ATURAN</span>MAIN</h1>
+                    <p class="text-grey text-spacey text-center hackerFont lead">
+                        Selamat datang, <span class="vim-caret">{{ user.username }}</span>! Sekarang kamu sudah menjadi bagian dari 0sint Maniac !!!
+                    </p>
+                    {% endif %}
+                    <div class="row justify-content-center  hackerFont ">
+                        <div class="col-md-10">
+                            <h5 class="bold color_white pt-3">
+                                Aturan Umum dan Petunjuk
+                            </h5>
+                            <ul>
+                                <li>Setiap pertanyaan memiliki sejumlah poin tergantung pada tingkat kesulitannya. Mengambil petunjuk (hint) akan mengurangi 10% dari poin yang terkait dengan pertanyaan tersebut.</li>
+                                <li>Tidak ada urutan tertentu dalam menyelesaikan pertanyaan-pertanyaan.</li>
+                                <li>Peringkat dapat dilihat di halaman Hackerboard. Waktu papan peringkat diperbarui setiap saat.</li>
+                                <li>Flag atau format jawaban : <span class="vim-caret">0sint_{jawaban}.</span> Beberapa file mungkin hanya berisi teks di dalam kurung. Pastikan Anda mengirimkannya dalam format yang ditentukan. Teks flag tidak
+                                    bersifat case sensitive.</li>
+                                <li>Ini adalah lingkungan bersaing dengan tujuan mempelajari keamanan siber dan ethical hacking. Tolong jangan bagikan flag & solusi dengan orang lain.</li>
+                            </ul>
+                            <h5 class="bold color_white pt-3">
+                                Aturan Khusus dan Petunjuk
+                            </h5>
+                            <ul>
+                                <li>Jangan mencoba meretas apapun</li>
+                                <li>Jangan mencoba meretas anggota lain.</li>
+                                <li>Jangan merusak! Jangan bagikan cara Anda menyelesaikan setiap tantangan kepada pengguna lain.</li>
+                                <li>Dilarang melakukan serangan brute force pada formulir flag.</li>
+                            </ul>
+                            
+                            <div class="row text-center pt-5">
+                                <div class="col-xl-12">
+                                    <button class="btn btn-outline-success px-3 my-2 ml-0 ml-sm-1 text-left typewriter" onclick="(function(){window.location.href='/quest'})();">
+                                    <h4>LET's THE 0sint BEGIN!</h4>
+                                    </button>
+                                    <small id="registerHelp" class="mt-2 form-text text-muted">Crypt0 Software Engineering XX</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

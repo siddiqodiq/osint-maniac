@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>OSINT MANIAC</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap4-neon-glow.min.css'%}">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+    <link rel="stylesheet" href="{% static 'css/main.css'%}">
+    
+        <script>
+            (function (w, d, s, o, f, js, fjs) {
+            w["botsonic_widget"] = o;
+            w[o] =
+                w[o] ||
+                function () {
+                (w[o].q = w[o].q || []).push(arguments);
+                };
+            (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+            js.id = o;
+            js.src = f;
+            js.async = 1;
+            fjs.parentNode.insertBefore(js, fjs);
+            })(window, document, "script", "Botsonic", "https://widget.writesonic.com/CDN/botsonic.min.js");
+            Botsonic("init", {
+            serviceBaseUrl: "https://api.botsonic.ai",
+            token: "08d24959-77ed-427f-b0e6-86ee31f885e3",
+            });
+        </script>   
+</head>
+
+<body class="imgloaded">
+    <div class="glitch">
+        <div style="position: fixed;" class="glitch__img"></div>
+        <div style="position: fixed;" class="glitch__img"></div>
+        <div style="position: fixed;" class="glitch__img"></div>
+        <div style="position: fixed;" class="glitch__img"></div>
+        <div style="position: fixed;" class="glitch__img"></div>
+    </div>
+    <div class="navbar-dark text-white">
+        <div class="container">
+            <nav class="navbar px-0 navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a href="/" class="pl-md-0 text-decoration-none text-light">
+                            <h3 class="bold"><span class="color_danger"><img src="{% static '/images/logo.png' %}" alt="Your Logo" class="logo" height="60px" width="50px"> OSINT</span><span class="color_white">MANIAC</span></h3>
+                        </a>
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <a href="/" class="p-3 text-decoration-none text-light bold">Home</a>
+                            <a href="/about" class="p-3 text-decoration-none text-white bold">About</a>
+                            <a href="/scoreboard" class="p-3 text-decoration-none text-light bold">Scoreboard</a>
+                            <a href="/profil" class="p-3 text-decoration-none text-light bold">Profil</a>
+                            {% if user.is_authenticated %}
+                                <a href="/logout" class="p-3 text-decoration-none text-light bold">Logout</a>
+                            {% else %}
+                                <a href="/login" class="p-3 text-decoration-none text-light bold">Login</a>
+                            {% endif %}        
+                    </div>
+                </div>
+            </nav>
+
+        </div>
+    </div>
+
+    <div class="jumbotron bg-transparent mb-0 pt-3 radius-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <h1 class="display-1 bold color_white content__title text-center"><span class="color_danger">TENTANG</span>KAMI</h1>
+                    <p class="text-grey text-spacey text-center hackerFont lead">
+                        Banyak teka-teki yang perlu kamu pecahkan, ay0 bantu kami!
+                    </p>
+                    <div class="row justify-content-center hackerFont">
+                        <div class="col-md-8">
+                            <h5 class="bold color_white pt-3">
+                                What is 0sint Maniac?
+                            </h5>
+                            Platform Cyber Exercise yang berfokus pada OSINT (Open Source Intelligence) merupakan sebuah lingkungan virtual di mana peserta dapat mengasah keterampilan mereka dalam mengumpulkan, menganalisis, dan menginterpretasi informasi terbuka dari berbagai sumber untuk menyelesaikan tantangan keamanan. 
+                            <h5 class="bold color_white pt-3">
+                                About 0sint Maniac
+                            </h5>
+                            Osint Maniac Cyber Exercise Platform membuka pintu bagi para pencari pengetahuan keamanan siber yang ingin menyempurnakan keterampilan OSINT mereka melalui latihan dan tantangan yang menantang. Platform ini menawarkan pengalaman yang menarik dan relevan untuk pertumbuhan peserta dalam dunia keamanan siber.
+                            <h5 class="bold color_white pt-3">
+                                Who can play 0sint Maniac?
+                            </h5>
+                            0sint Maniac bisa dimainkan oleh siapapun. 0sint Maniac disarankan untuk pemula yang ingin mendalami 0SINT atau Social Engineering
+                            <div class="row text-center pt-5">
+                                <div class="col-xl-12">
+                                    <button class="btn btn-outline-success btn-shadow px-3my-2 ml-0 ml-sm-1 text-left typewriter" onclick="(function(){window.location.href='/quest'})();">
+                                        <h4>Ay0 Kita Mulai!</h4>
+                                        </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

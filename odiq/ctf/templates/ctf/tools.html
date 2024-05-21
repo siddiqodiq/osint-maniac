@@ -1,0 +1,872 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>OSINT MANIAC</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap4-neon-glow.min.css'%}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+    <link rel="stylesheet" href="{% static 'css/main.css'%}">
+</head>
+
+<body class="imgloaded">
+    <div class="glitch">
+        <div style="position: fixed;" class="glitch__img"></div>
+        <div style="position: fixed;" class="glitch__img"></div>
+        <div style="position: fixed;" class="glitch__img"></div>
+        <div style="position: fixed;" class="glitch__img"></div>
+        <div style="position: fixed;" class="glitch__img"></div>
+    </div>
+    <div class="navbar-dark text-white">
+        <div class="container">
+            <nav class="navbar px-0 navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a href="/" class="pl-md-0 text-decoration-none text-light">
+                            <h5 class="bold"><span class="color_danger"><img src="{% static '/images/logo.png' %}" alt="Your Logo" class="logo" height="60px" width="50px"> OSINT</span><span class="color_white">MANIAC</span></h5>
+                        </a>
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <a href="/" class="p-3 text-decoration-none text-light bold">Home</a>
+                            <a href="/about" class="p-3 text-decoration-none text-white bold">About</a>
+                            <a href="/leaderboard" class="p-3 text-decoration-none text-light bold">Hall of Fame</a>
+                            <a href="/profil" class="p-3 text-decoration-none text-light bold">Profil</a>
+                            {% if user.is_authenticated %}
+                                <a href="/logout" class="p-3 text-decoration-none text-light bold">Logout</a>
+                            {% else %}
+                                <a href="/login" class="p-3 text-decoration-none text-light bold">Login</a>
+                            {% endif %}        
+                    </div>
+                </div>
+            </nav>
+
+        </div>
+    </div>
+
+    <div class="jumbotron bg-transparent mb-0 pt-3 radius-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <h1 class="display-1 bold color_white content__title text-center"><span class="color_danger">{T00ls}</h1>
+                    <p class="text-grey text-spacey text-center hackerFont lead">
+                        Tools ini mungkin akan membantumu untuk menyelesaikan tantangan
+                    </p>
+                    <div class="row justify-content-center hackerFont">
+                        <div class="container">
+            
+                            <h2 id="real-time-search-social-media-search-and-general-social-media-tools">Real-Time Search, Social Media Search, and General Social Media Tools</h2>
+                            <ul style="columns: 3; column-gap: 20px; list-style: none; padding: 0;">
+                                <li><a style="color: greenyellow;" href="https://www.audiense.com">Audiense</a> - Alat untuk mengidentifikasi audiens yang relevan, menemukan wawasan yang dapat diambil, dan memberikan strategi untuk mengembangkan bisnis Anda.</li>
+                                <li><a style="color: greenyellow;" href="http://bottlenose.com">Bottlenose</a></li>
+                                <li><a style="color: greenyellow;" href="https://www.brandwatch.com">Brandwatch</a></li>
+                                <li><a style="color: greenyellow;" href="https://buffer.com">Buffer</a></li>
+                                <li><a style="color: greenyellow;" href="http://buzzsumo.com">Buzz sumo</a> - "Gunakan wawasan konten kami untuk menghasilkan ide, membuat konten berperforma tinggi, memantau kinerja Anda, dan mengidentifikasi pengaruh."</li>
+                                <li><a style="color: greenyellow;" href="https://epieos.com">Epieos</a> - Cari akun sosial dengan email dan nomor telepon.</li>
+                                <li><a style="color: greenyellow;" href="http://www.geocreepy.com">GeoCreepy</a></li>
+                                <li><a style="color: greenyellow;" href="https://geofeedia.com">Geofeedia</a></li>
+                                <li><a style="color: greenyellow;" href="http://hootsuite.com">Hootsuite</a></li>
+                                <li><a style="color: greenyellow;" href="http://www.hashatit.com">Hashtatit</a></li>
+                                <li><a style="color: greenyellow;" href="http://klear.com">Klear</a></li>
+                                <li><a style="color: greenyellow;" href="https://www.idcrawl.com/">IDCrawl</a> - Cari nama di jaringan sosial populer.</li>
+                                <li><a style="color: greenyellow;" href="http://mustbepresent.com">MustBePresent</a></li>
+                                <li><a style="color: greenyellow;" href="http://www.netvibes.com">Netvibes</a></li>
+                                <li><a style="color: greenyellow;" href="http://www.opinioncrawl.com">OpinionCrawl</a></li>
+                                <li><a style="color: greenyellow;" href="https://www.rivaliq.com">Rival IQ</a></li>
+                                <li><a style="color: greenyellow;" href="http://www.socialbakers.com">SocialBakers</a></li>
+                                <li><a style="color: greenyellow;" href="http://socialblade.com">SociaBlade</a></li>
+                                <li><a style="color: greenyellow;" href="http://social.downornot.com">Social DownORNot</a></li>
+                                <li><a style="color: greenyellow;" href="https://socialgrep.com">SocialGrep</a> - Mesin pencarian/analisis Reddit, "sinyal dari web sosial dalam kebisingan."</li>
+                                <li><a style="color: greenyellow;" href="http://www.social-searcher.com">Social Searcher</a></li>
+                                <li><a style="color: greenyellow;" href="https://tagboard.com">Tagboard</a></li>
+                                <li><a style="color: greenyellow;" href="http://www.trackur.com">Trackur</a></li>
+                                <li><a style="color: greenyellow;" href="http://www.uvrx.com/social.html">UVRX</a></li>
+                                <li><a style="color: greenyellow;" href="https://go.mail.ru/search_social">Mail.Ru Pencarian Jejaring Sosial</a></li>
+                                <li><a style="color: greenyellow;" href="https://kribrum.io/">Kribrum</a></li>
+                                <li><a style="color: greenyellow;" href="https://watools.io/">WATools</a></li>
+                                <li><a style="color: greenyellow;" href="https://github.com/Rog3rSm1th/Profil3r">Profil3r</a></li>
+                                <li><a style="color: greenyellow;" href="https://github.com/loseys/Oblivion">Oblivion</a></li>
+                            </ul>
+
+                            <h2 id="social-media-tools">Social Media Tools</h2>
+
+                            <h5 id="twitter">Twitter</h5>
+
+                            <ul style="columns: 2; column-gap: 20px; list-style: none; padding: 0;">
+                                <li><a style="color: greenyellow;" href="https://www.exportdata.io/">ExportData</a> - Alat ekspor data untuk tweet historis, pengikut &amp; yang diikuti, dan tren historis.</li>
+                                <li><a style="color: greenyellow;" href="http://foller.me">Foller.me</a></li>
+                                <li><a style="color: greenyellow;" href="https://www.happygrumpy.com">HappyGrumpy</a></li>
+                                <li><a style="color: greenyellow;" href="https://www.mytweetalerts.com/">MyTweetAlerts</a> - Alat untuk membuat peringatan email kustom berdasarkan pencarian Twitter.</li>
+                                <li><a style="color: greenyellow;" href="http://onemilliontweetmap.com">OneMillionTweetMap</a></li>
+                                <li><a style="color: greenyellow;" href="https://ritetag.com">RiteTag</a></li>
+                                <li><a style="color: greenyellow;" href="http://www.twittersentiment.appspot.com">Sentiment140</a></li>
+                                <li><a style="color: greenyellow;" href="https://tagdef.com">Tagdef</a></li>
+                                <li><a style="color: greenyellow;" href="https://trendspredictions.com/">Trends Predictions</a> - Alat untuk menemukan topik tren baru.</li>
+                                <li><a style="color: greenyellow;" href="http://trends24.in">Trends24</a></li>
+                                <li><a style="color: greenyellow;" href="http://twchat.com">TwChat</a></li>
+                                <li><a style="color: greenyellow;" href="https://www.tweetdeck.com">TweetDeck</a></li>
+                                <li><a style="color: greenyellow;" href="http://mapd.csail.mit.edu/tweetmap">TweetMap</a></li>
+                                <li><a style="color: greenyellow;" href="http://worldmap.harvard.edu/tweetmap">TweetMap</a></li>
+                                <li><a style="color: greenyellow;" href="https://twitter.com/search-advanced?lang=en">Pencarian Twitter Lanjutan</a></li>
+                                <li><a style="color: greenyellow;" href="https://www.twitteraudit.com">Twitter Audit</a></li>
+                                <li><a style="color: greenyellow;" href="http://tweetreports.com/twitter-chat-schedule">Jadwal Twitter Chat</a></li>
+                                <li><a style="color: greenyellow;" href="http://search.twitter.com">Pencarian Twitter</a></li>
+                            </ul>
+
+                            <h5 id="facebook">Facebook</h5>
+                            <ul style="columns: 2; column-gap: 20px; list-style: none; padding: 0;">
+                                <li><a style="color: greenyellow;" href="http://barometer.agorapulse.com">Agora Pulse</a></li>
+                                <li><a style="color: greenyellow;" href="http://www.fanpagekarma.com">Fanpage Karma</a></li>
+                                <li><a style="color: greenyellow;" href="https://github.com/narkopolo/fb_friend_list_scraper">Facebook Friend List Scraper</a> - Alat untuk mengambil daftar teman Facebook tanpa batasan tingkat.</li>
+                                <li><a style="color: greenyellow;" href="http://search.fb.com/">Pencarian Facebook</a></li>
+                                <li><a style="color: greenyellow;" href="https://github.com/sqren/fb-sleep-stats">Fb-sleep-stats</a></li>
+                                <li><a style="color: greenyellow;" href="https://randomtools.io">Cari ID Facebook saya</a></li>
+                                <li><a style="color: greenyellow;" href="https://lookup-id.com">Lookup-ID.com</a></li>
+                                <li><a style="color: greenyellow;" href="https://searchisback.com">SearchIsBack</a></li>
+                                <li><a style="color: greenyellow;" href="http://www.wolframalpha.com/input/?i=facebook+report">Wolfram Alpha Laporan Facebook</a></li>
+                                <li><a style="color: greenyellow;" href="https://haveibeenzuckered.com/">haveibeenzuckered</a> - Dataset besar yang berisi 533 juta akun Facebook tersedia untuk diunduh. Data ini diperoleh dengan mengeksploitasi kerentanan yang, menurut Facebook, diperbaiki pada Agustus 2019. Periksa apakah nomor telepon ada dalam pelanggaran data Facebook.</li>
+                            </ul>
+
+                        
+                            <h5 id="instagram"> Instagram</h5>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                                    <li><a style="color: greenyellow;" href="http://hashtagify.me">Hashtagify</a></li>
+                                    <li><a style="color: greenyellow;" href="http://iconosquare.com">Iconosquare</a></li>
+                                    <li><a style="color: greenyellow;" href="https://github.com/Datalux/Osintgram">Osintgram</a> - Osintgram menawarkan shell interaktif untuk melakukan analisis pada akun Instagram pengguna apa pun berdasarkan nama panggilannya. </li>
+                                    <li><a style="color: greenyellow;" href="https://www.picodash.com">Picodash</a></li>
+                                    <li><a style="color: greenyellow;" href="https://github.com/novitae/sterraxcyl">Sterra</a></li>
+                                    <li><a style="color: greenyellow;" href="https://github.com/megadose/toutatis">Toutatis</a></li>
+                                    </ul>
+                            <h5 id="pinterest"> Pinterest</h5>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="http://pingroupie.com">Pingroupie</a></li>
+                            </ul>
+                            <h5 id="reddit" >Reddit</h5>
+                            <p><em>Tools to help discover more about a reddit user or subreddit.</em></p>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                                <li><a style="color: greenyellow;" href="http://imgur.com/search?q=">Imgur</a> - Situs web hosting gambar paling populer yang digunakan oleh pengguna reddit.</li>
+                                <li><a style="color: greenyellow;" href="http://kerrick.github.io/Mostly-Harmless/#features">Mostly Harmless</a> - Mostly Harmless mencari halaman yang sedang Anda lihat untuk melihat apakah sudah diunggah ke reddit.</li>
+                                <li><a style="color: greenyellow;" href="http://www.redditarchive.com">Reddit Archive</a> - Arsip historis dari posting reddit.</li>
+                                <li><a style="color: greenyellow;" href="https://chrome.google.com/webstore/detail/reddit-enhancement-suite/kbmfpngjjgdllneeigpgjifpgocmfgmb">Reddit Suite</a> - Meningkatkan pengalaman reddit Anda.</li>
+                                <li><a style="color: greenyellow;" href="https://atomiks.github.io/reddit-user-analyser/">Reddit User Analyser</a> - Analisis akun pengguna reddit.</li>
+                                <li><a style="color: greenyellow;" href="http://subreddits.org">Subreddits</a> - Temukan subreddit baru.</li>
+                                <li><a style="color: greenyellow;" href="https://redditcommentsearch.com/">Reddit Comment Search</a> - Analisis pengguna reddit berdasarkan riwayat komentar.</li>
+                                <li><a style="color: greenyellow;" href="https://universalscammerlist.com/">Universal Scammer List</a> - Ini berfungsi sebagai bagian situs web untuk subreddit /r/universalscammerlist. Subreddit itu, bersama dengan situs web ini dan bot reddit, mengelola daftar akun reddit yang jahat dan meminimalkan kerusakan yang dapat mereka sebabkan. Daftar ini disebut "USL".</li>
+                                <li><a style="color: greenyellow;" href="https://randomtools.io/reddit-comment-search/">Pencarian Komentar Reddit</a> - Cari komentar reddit berdasarkan nama pengguna reddit.</li>
+                            </ul>
+                            <h5 id="tumblr"> Tumblr</h5>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="http://www.tumblr.com/search">Tumblr Search</a></li>
+                            </ul>
+                            <h5 id="linkedin"> LinkedIn</h5>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="https://chrome.google.com/webstore/detail/ftl/lkpekgkhmldknbcgjicjkomphkhhdkjj?hl=en-GB">FTL</a> - Plugin browser yang menemukan email dari profil LinkedIn orang.</li>
+                            </ul>
+                            <h5 id="telegram"> Telegram</h5>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                                <li><a style="color: greenyellow;" href="https://cse.google.com/cse?q=+&cx=006368593537057042503:efxu7xprihg#gsc.tab=0&gsc.q=%20&gsc.page=1">Telegago</a> - Pencarian Lanjutan Google khusus untuk menemukan Saluran dan Ruang Obrolan Telegram publik dan pribadi. </li>
+                                <li><a style="color: greenyellow;" href="https://github.com/tejado/telegram-nearby-map">Peta Terdekat Telegram</a> - Webapp berbasis OpenStreetMap dan perpustakaan resmi Telegram untuk menemukan posisi pengguna terdekat.</li>
+                            </ul>   
+                           
+                            <h2 id="forums-and-discussion-boards-search"> Forums and Discussion Boards Search</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="http://boardreader.com">Boardreader</a></li>
+                            <li><a style="color: greenyellow;" href="https://builtwithflarum.com/">Built With Flarum</a></li>
+                            <li><a style="color: greenyellow;" href="https://link-base.org/">LinkBase</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.facebook.com">Facebook Groups</a></li>
+                            <li><a style="color: greenyellow;" href="https://groups.google.com">Google Groups</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.linkedin.com">Linkedin Groups</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.ning.com">Ning</a></li>
+                            <li><a style="color: greenyellow;" href="http://omgili.com">Omgili</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.xing.com/communities">Xing Groups</a></li>
+                            <li><a style="color: greenyellow;" href="https://groups.yahoo.com">Yahoo Groups</a></li>
+                            <li><a style="color: greenyellow;" href="https://4chansearch.com/">4chan Search</a></li>
+                            </ul>
+                            <h2 id="username-check"> Username Check</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="http://www.checkusernames.com">Check User Names</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.idcrawl.com/username">IDCrawl</a> - Cari username di jaringan sosial populer.</li>
+                            <li><a style="color: greenyellow;" href="http://www.Knowem.com">Knowem</a> - Cari username di lebih dari 500 jaringan sosial populer. </li>
+                            <li><a style="color: greenyellow;" href="http://www.namechk.com">Name Chk</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.namecheckr.com">Name Checkr</a>    </li>
+                            <li><a style="color: greenyellow;" href="https://namecheckup.com">Name Checkup</a> - Alat pencarian yang memungkinkan Anda memeriksa ketersediaan username dari seluruh media sosial. Selain itu, juga memungkinkan Anda memeriksa ketersediaan nama domain tertentu.</li>
+                            <li><a style="color: greenyellow;" href="https://nameketchup.com">NameKetchup</a> - Memeriksa nama domain dan username di situs dan platform media sosial populer.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/thewhiteh4t/nexfil">NexFil</a> - Memeriksa username dari hampir semua situs jaringan sosial.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/seekr-osint/seekr">Seekr</a> Toolkit serbaguna all-in-one untuk mengumpulkan dan mengelola data OSINT dengan antarmuka web yang rapi. Dapat digunakan untuk mencatat dan memeriksa username.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/sherlock-project/sherlock">Sherlock</a> - Cari username di beberapa platform/situs web.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/snooppr/snoop/blob/master/README.en.md">Snoop</a> - Cari nama panggilan di web (dunia OSINT)</li>
+                            <li><a style="color: greenyellow;" href="http://www.usersearch.org">Cari Pengguna</a></li>
+                            <li><a style="color: greenyellow;" href="https://whatsmyname.app/">WhatsMyName</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.user-searcher.com">User Searcher</a> - User-Searcher adalah alat yang kuat dan gratis untuk membantu Anda mencari username di lebih dari 2000 situs web.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/soxoj/maigret">Maigret</a> - Kumpulkan data tentang seseorang berdasarkan username.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/p1ngul1n0/blackbird">Blackbird</a> - Cari username di lebih dari 500+ situs web.</li>
+                            </ul>
+                            <h2 id="people-investigations"> People Investigations</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                                <li><a style="color: greenyellow;" href="http://www.411.com">411 (AS)</a> - Cari berdasarkan orang, nomor telepon, alamat, dan bisnis. Informasi gratis terbatas, penjualan data premium.</li>
+                                <li><a style="color: greenyellow;" href="http://www.192.com">192 (UK)</a> - Cari berdasarkan orang, bisnis, alamat. Informasi gratis terbatas, penjualan data premium.</li>
+                                <li><a style="color: greenyellow;" href="http://www.ancestry.com">Ancestry</a> - Data premium, uji coba gratis dengan kartu kredit.</li>
+                                <li><a style="color: greenyellow;" href="https://www.blackbookonline.info">Black Book Online</a> - Gratis. Direktori nasional pencarian rekam jejak publik.</li>
+                                <li><a style="color: greenyellow;" href="http://www.canada411.ca">Canada411</a> - Cari berdasarkan orang, nomor telepon, dan bisnis. Gratis.</li>
+                                <li><a style="color: greenyellow;" href="http://www.classmates.com">Classmates</a> - Pencarian orang berfokus pada sekolah menengah. Akun gratis memungkinkan membuat profil dan melihat anggota lain. Akun premium diperlukan untuk menghubungi anggota lain.</li>
+                                <li><a style="color: greenyellow;" href="http://www.crunchbase.com">CrunchBase</a> - Basis data informasi bisnis, dengan fokus pada data investasi, akuisisi, dan eksekutif. Fokus tambahan pada riset pasar dan menghubungkan pendiri dan investor.</li>
+                                <li><a style="color: greenyellow;" href="https://www.cyberoneintel.com/digitalfootprint">Cek Jejak Digital</a> - Telusuri internet termasuk akun media sosial, riwayat pekerjaan, profil kencan, profil game, pelanggaran kredensial web gelap, kejadian mesin pencari terindeks, dan lainnya.</li>
+                                <li><a style="color: greenyellow;" href="https://facecheck.id">FaceCheck.ID</a> - Telusuri internet berdasarkan wajah.</li>
+                                <li><a style="color: greenyellow;" href="https://familysearch.org">Family Search</a> - Situs genealogi populer. Gratis, tetapi registrasi diperlukan. Didanai oleh The Church Of Jesus Christ of Latter-day Saints.</li>
+                                <li><a style="color: greenyellow;" href="http://www.bop.gov/inmateloc">Biro Penjara Federal - Pencari Narapidana (AS)</a> - Telusuri narapidana federal yang dipenjara sejak 1982 hingga sekarang.</li>
+                                <li><a style="color: greenyellow;" href="http://www.fold3.com">Fold3 (Rekaman Militer AS)</a> - Telusuri rekaman militer. Filter pencarian terbatas dengan akses gratis. Akses premium memerlukan langganan.</li>
+                                <li><a style="color: greenyellow;" href="http://www.genealogybank.com">Genealogy Bank</a> - Data premium, uji coba gratis dengan kartu kredit.</li>
+                                <li><a style="color: greenyellow;" href="http://www.genealogylinks.net">Genealogy Links</a> - Direktori genealogi dengan lebih dari 50 ribu tautan.</li>
+                                <li><a style="color: greenyellow;" href="https://homemetry.com">Homemetry</a> - Pencarian alamat mundur dan memungkinkan pencarian properti yang dijual/disewakan.</li>
+                                <li><a style="color: greenyellow;" href="https://www.judyrecords.com/">Judyrecords</a> - Gratis. Pencarian nasional 400 juta lebih kasus pengadilan Amerika Serikat.</li>
+                                <li><a style="color: greenyellow;" href="http://www.kompass.com">Kompass</a> - Direktori bisnis dan pencarian.</li>
+                                <li><a style="color: greenyellow;" href="https://www.opensanctions.org/search/">OpenSanctions</a> - Informasi tentang sanksi dan pejabat publik.</li>
+                                <li><a style="color: greenyellow;" href="http://www.nationalarchives.gov.uk">Arsip Nasional (Inggris)</a> - Telusuri arsip nasional Inggris.</li>
+                                <li><a style="color: greenyellow;" href="http://reunion.com">Reunion</a> - Pencarian orang. Informasi gratis terbatas, penjualan data premium.</li>
+                                <li><a style="color: greenyellow;" href="http://www.searchbug.com">SearchBug</a> - Pencarian orang. Informasi gratis terbatas, penjualan data premium.</li>
+                                <li><a style="color: greenyellow;" href="http://www.spokeo.com">Spokeo</a> - Pencarian orang. Informasi gratis terbatas, penjualan data premium.</li>
+                                <li><a style="color: greenyellow;" href="https://unicourt.com/">UniCourt</a> - Pencarian gratis terbatas, penjualan data premium. Pencarian nasional 100 juta lebih kasus pengadilan Amerika Serikat.</li>
+                                <li><a style="color: greenyellow;" href="http://www.whitepages.com">White Pages (AS)</a> - Pencarian orang. Informasi gratis terbatas, penjualan data premium.</li>
+                                <li><a style="color: greenyellow;" href="https://www.zabasearch.com/">ZabaSearch</a></li>
+                                <li><a style="color: greenyellow;" href="https://www.jailbase.com/">JailBase</a> - Situs informasi yang memungkinkan Anda mencari orang yang mungkin Anda kenal, dan bahkan memberi tahu jika seseorang yang Anda kenal ditangkap.</li>
+                                <li><a style="color: greenyellow;" href="https://mugshots.com/">Mugshots</a></li>
+                                <li><a style="color: greenyellow;" href="https://www.backgroundchecks.com/solutions/beenverified">BeenVerified</a></li>
+    
+                            </ul>
+                            <h2 id="phone-number-research"> Phone Number Research</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="https://www.emobiletracker.com/">EmobileTracker.com</a></li>
+                            <li><a style="color: greenyellow;" href="https://freecarrierlookup.com/">FreeCarrierLookup</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.phonevalidator.com/index.aspx">Phone Validator</a> - Layanan pencarian telepon yang cukup akurat, terutama bagus melawan nomor Google Voice.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/sundowndev/PhoneInfoga">PhoneInfoga</a> - Kerangka kerja pengumpulan informasi &amp; OSINT tingkat lanjut untuk nomor telepon</li>
+                            <li><a style="color: greenyellow;" href="https://www.reversephonecheck.com">Pengecekan Telepon Terbalik</a> - Lihat nama, alamat, nomor telepon, atau email dan temukan informasi tentang diri Anda, keluarga, teman, atau teman sekolah lama secara anonim. Didukung oleh infotracer.com</li>
+                            <li><a style="color: greenyellow;" href="http://www.reversephonelookup.com/">Pencarian Telepon Terbalik</a> - Informasi detail tentang operator telepon, wilayah, penyedia layanan, dan informasi switch.</li>
+                            <li><a style="color: greenyellow;" href="http://spydialer.com/">Spy Dialer</a> - Dapatkan voicemail seseorang tanpa meneleponnya. Menyadap voicemail.</li>
+                            <li><a style="color: greenyellow;" href="https://www.telnyx.com/">Telnyx</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.truepeoplesearch.com">TruePeopleSearch</a> - Pencarian gratis untuk mencari nomor telepon, alamat, dan banyak lagi. Data diperbarui setiap hari.</li>
+                            </ul>
+                            <h2 id="e-mail-search--e-mail-check"> E-mail Search / E-mail Check</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="https://dehashed.com/">DeHashed</a> - DeHashed helps prevent ATO with our extensive data set &amp; breach notification solution. Match employee and consumer logins against the world’s largest repository of aggregated publicly available assets leaked from third-party breaches. Secure passwords before criminals can abuse stolen information, and protect your enterprise.</li>
+                            <li><a style="color: greenyellow;" href="https://leakcheck.io/">LeakCheck</a> - Data Breach Search Engine with 7.5B+ entries collected from more than 3000 databases. Search by e-mail, username, keyword, password or corporate domain name. </li>
+                            <li><a style="color: greenyellow;" href="http://www.email-validator.net">Email Address Validator</a></li>
+                            <li><a style="color: greenyellow;" href="http://email-format.com">Email Format</a> - is a website that allows you to find email address formats used by different companies.</li>
+                            <li><a style="color: greenyellow;" href="https://tools.verifyemailaddress.io">EmailHippo</a> - is an email address verification platform that will check whether a given email address exist or not.</li>
+                            <li><a style="color: greenyellow;" href="https://www.polished.app/email-permutator/">Email Permutator</a></li>
+                            <li><a style="color: greenyellow;" href="https://github.com/khast3x/h8mail">h8mail</a> - Password Breach Hunting and Email OSINT, locally or using premium services. Supports chasing down related email.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/megadose/holehe">Holehe</a></li>
+                            <li><a style="color: greenyellow;" href="https://haveibeenpwned.com">Have I Been Pwned</a> - Search across multiple data breaches to see if your email address has been compromised.</li>
+                            <li><a style="color: greenyellow;" href="https://hunter.io">Hunter</a> - Hunter lets you find email addresses in seconds and connect with the people that matter for your business.</li>
+                            <li><a style="color: greenyellow;" href="https://snov.io/email-finder">Snov.io</a> - Find email addresses on any website.</li>
+                            <li><a style="color: greenyellow;" href="http://mailtester.com">MailTester</a></li>
+                            <li><a style="color: greenyellow;" href="https://mxtoolbox.com/">mxtoolbox</a> - Free online tools to investigate/troubleshoot email server issues.</li>
+                            <li><a style="color: greenyellow;" href="http://www.samy.pl/peepmail">Peepmail</a></li>
+                            <li><a style="color: greenyellow;" href="https://pipl.com">Pipl</a></li>
+                            <li><a style="color: greenyellow;" href="https://reacher.email">Reacher</a> - Real-time email verification API, written in Rust, 100% open-source.</li>
+                            <li><a style="color: greenyellow;" href="https://thatsthem.com/reverse-email-lookup">ThatsThem</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.toofr.com">Toofr</a></li>
+                            <li><a style="color: greenyellow;" href="http://verify-email.org">Verify Email</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.voilanorbert.com">VoilaNorbert</a> - Find anyone&#39;s contact information for lead research or talent acquisition.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/mxrch/GHunt">Ghunt</a> - Investigate Google emails and documents.</li>
+                            </ul>
+                            <h2 id="domain-and-ip-research"> Domain and IP Research</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="https://www.accuranker.com">Accuranker</a></li>
+                            <li><a style="color: greenyellow;" href="https://ahrefs.com">ahrefs</a> - A tool for backlink research, organic traffic research, keyword research, content marketing &amp; more.</li>
+                            <li><a style="color: greenyellow;" href="https://tenantresolution.pingcastle.com">Azure Tenant Resolution by PingCastle</a> - Search for Azure Tenant using its domain name or its ID </li>
+                            <li><a style="color: greenyellow;" href="http://www.bing.com/toolbox/webmaster">Bing Webmaster Tools</a></li>
+                            <li><a style="color: greenyellow;" href="http://builtwith.com">BuiltWith</a> - is a website that will help you find out all the technologies used to build a particular websites.</li>
+                            <li><a style="color: greenyellow;" href="http://centralops.net">Central Ops</a></li>
+                            <li><a style="color: greenyellow;" href="http://dedicatedornot.com">Dedicated or Not</a></li>
+                            <li><a style="color: greenyellow;" href="https://dnsdumpster.com">DNSDumpster</a> - is a website that will help you discover hosts related to a specific domain.</li>
+                            <li><a style="color: greenyellow;" href="https://completedns.com/dns-history/">DNS History</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.dnsstuff.com">DNSStuff</a></li>
+                            <li><a style="color: greenyellow;" href="http://dnsviz.net">DNSViz</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.domaincrawler.com">Domain Crawler</a></li>
+                            <li><a style="color: greenyellow;" href="http://centralops.net/co/DomainDossier.aspx">Domain Dossier</a></li>
+                            <li><a style="color: greenyellow;" href="http://whois.domaintools.com">Domain Tools</a> - Whois lookup and domain/ip historical data.</li>
+                            <li><a style="color: greenyellow;" href="https://www.easywhois.com">Easy whois</a></li>
+                            <li><a style="color: greenyellow;" href="https://exonerator.torproject.org">Exonera Tor</a> - A database of IP addresses that have been part of the Tor network. It answers the question whether there was a Tor relay running on a given IP address on a given date.</li>
+                            <li><a style="color: greenyellow;" href="http://follow.net">Follow.net</a></li>
+                            <li><a style="color: greenyellow;" href="http://app.graphystories.com">GraphyStories</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.hypestat.com">HypeStat</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.infosniper.net">Infosniper</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.intodns.com">intoDNS</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.ipchecking.com">IP Checking</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.iplocation.net">IP Location</a> - is used for mapping of an IP address or MAC address to the real-world geographic location of an Internet-connected computing or a mobile device.</li>
+                            <li><a style="color: greenyellow;" href="http://ip2geolocation.com">IP 2 Geolocation</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.ip2location.com/demo.aspx">IP 2 Location</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.ipfingerprints.com">IPFingerprints</a> - is used to find the approximate geographic location of an IP address along with some other useful information including ISP, TimeZone, Area Code, State.</li>
+                            <li><a style="color: greenyellow;" href="http://www.ipvoid.com">IPVoid</a> - IP address toolset.</li>
+                            <li><a style="color: greenyellow;" href="http://www.softpedia.com/get/Internet/Other-Internet-Related/IntelliTamper.shtml">IntelliTamper</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.kloth.net/services">Kloth</a></li>
+                            <li><a style="color: greenyellow;" href="http://network-tools.com">NetworkTools</a></li>
+                            <li><a style="color: greenyellow;" href="https://majestic.com">Majestic</a> - Find out who links to your website.</li>
+                            <li><a style="color: greenyellow;" href="https://www.maxmind.com">MaxMind</a></li>
+                            <li><a style="color: greenyellow;" href="http://toolbar.netcraft.com/site_report?url=undefined#last_reboot">Netcraft Site Report</a> - is an online database that will provide you a report with detail information about a particular website and the history associated with it.</li>
+                            <li><a style="color: greenyellow;" href="http://www.openlinkprofiler.org/">OpenLinkProfiler</a></li>
+                            <li><a style="color: greenyellow;" href="https://moz.com/researchtools/ose">Open Site Explorer</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.pageglimpse.com">PageGlimpse</a></li>
+                            <li><a style="color: greenyellow;" href="https://pentest-tools.com/information-gathering/google-hacking">Pentest-Tools.com</a> - uses advanced search operators (Google Dorks) to find juicy information about target websites.</li>
+                            <li><a style="color: greenyellow;" href="https://phishstats.info/">PhishStats</a></li>
+                            <li><a style="color: greenyellow;" href="https://pulsedive.com">Pulsedive</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.quantcast.com">Quantcast</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.quicksprout.com">Quick Sprout</a></li>
+                            <li><a style="color: greenyellow;" href="http://redirectdetective.com">RedirectDetective</a></li>
+                            <li><a style="color: greenyellow;" href="https://remote.12dt.com">Remote DNS Lookup</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.robtex.com">Robtex</a> - is an IP address and domain name based researching websites that offers multiple services such as Reverse DNS Lookup, Whois, and AS Macros.</li>
+                            <li><a style="color: greenyellow;" href="http://sameid.net">SameID</a></li>
+                            <li><a style="color: greenyellow;" href="https://securitytrails.com/dns-trails">SecurityTrails</a> - API to search current and historical DNS records, current and historical WHOIS, technologies used by sites and whois search for phone, email, address, IPs etc.</li>
+                            <li><a style="color: greenyellow;" href="https://www.semrush.com">SEMrush</a></li>
+                            <li><a style="color: greenyellow;" href="http://tools.seochat.com">SEO Chat Tools</a></li>
+                            <li><a style="color: greenyellow;" href="http://seotoolsforexcel.com">SEOTools for Excel</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.similarweb.com">Similar Web</a> - Compare any website traffic statistics &amp; analytics.</li>
+                            <li><a style="color: greenyellow;" href="http://smallseotools.com">SmallSEOTools</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.statscrop.com">StatsCrop</a></li>
+                            <li><a style="color: greenyellow;" href="https://github.com/david3107/squatm3gator">Squatm3gator</a> - Enumerate available domains generated modifying the original domain name through different cybersquatting techniques</li>
+                            <li><a style="color: greenyellow;" href="https://threatjammer.com">Threat Jammer</a> - Risk scoring service from curated threat intelligence data.</li>
+                            <li><a style="color: greenyellow;" href="http://urlquery.net">urlQuery</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.urlvoid.com">URLVoid</a> - Analyzes a website through multiple blacklist engines and online reputation tools to facilitate the detection of fraudulent and malicious websites.</li>
+                            <li><a style="color: greenyellow;" href="https://www.virustotal.com/">Virus Total</a> - Analyse suspicious domains, IPs URLs and files to detect malware and other breaches</li>
+                            <li><a style="color: greenyellow;" href="https://web-check.as93.net/">Web-Check</a> - All-in-one tool for viewing website and server meta data.</li>
+                            <li><a style="color: greenyellow;" href="http://webmeup.com">WebMeUp</a> - is the Web&#39;s freshest and fastest growing backlink index, and the primary source of backlink data for SEO PowerSuite.</li>
+                            <li><a style="color: greenyellow;" href="http://website.informer.com">Website Informer</a></li>
+                            <li><a style="color: greenyellow;" href="https://github.com/cybersader/WebsiteTechMiner-py">WebsiteTechMiner.py</a> - automates gathering website profiling data into a CSV from the &quot;BuiltWith&quot; or &quot;Wappalyzer&quot; API for tech stack information, technographic data, website reports, website tech lookups, website architecture lookups, etc.</li>
+                            <li><a style="color: greenyellow;" href="http://whatismyipaddress.com">WhatIsMyIPAddress</a></li>
+                            <li><a style="color: greenyellow;" href="https://who.is/">Who.is</a> - Domain whois information.</li>
+                            <li><a style="color: greenyellow;" href="https://whois.arin.net">Whois Arin Online</a> - is a web service for Whois data contained within ARIN&#39;s registration database</li>
+                            <li><a style="color: greenyellow;" href="http://www.whoishostingthis.com">WhoIsHostingThis</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.whoismind.com">WhoisMind</a></li>
+                            <li><a style="color: greenyellow;" href="https://whoisology.com">Whoisology</a></li>
+                            <li><a style="color: greenyellow;" href="http://whoisrequest.com">WhoIsRequest</a></li>
+                            <li><a style="color: greenyellow;" href="http://webboar.com.w3snoop.com">w3snoop</a> - is a website that gives you a free and comprehensive report about a specific website.</li>
+                            <li><a style="color: greenyellow;" href="http://dnssec-debugger.verisignlabs.com">Verisign</a></li>
+                            <li><a style="color: greenyellow;" href="http://viewdns.info">ViewDNS.info</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.yougetsignal.com">You Get Signal</a></li>
+                            <li><a style="color: greenyellow;" href="https://wigle.net/">WiGLE</a> - Wi-fi &quot;wardriving&quot; database. Contains a global map containing crowdsourced information on the location, name, and other properties of wi-fi networks. Software available to download to contribute data to the public infoset.</li>
+                            <li><a style="color: greenyellow;" href="https://urlscan.io/">urlscan</a> -  is a free service to scan and analyse websites.</li>
+                            </ul>
+                            <h2 id="expert-search"> Expert Search</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="http://academia.edu">Academia</a> - is a platform for sharing academic research.</li>
+                            <li><a style="color: greenyellow;" href="http://www.canlaw.com">CanLaw</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.expertisefinder.com">ExpertiseFinder</a></li>
+                            <li><a style="color: greenyellow;" href="http://expertpages.com">ExpertPages</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.experts.com">Experts.com</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.helpareporter.com">HARO</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.worldlicenseplates.com/">Licenseplates</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.theglobalexperts.org">GlobalExperts</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.idealist.org">Idealist</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.innocentive.com">Innocentive</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.internetexperts.info">Internet Experts</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.loc.gov/rr/askalib">Library of Congress: Ask a Librarian</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.maven.co">Maven</a></li>
+                            <li><a style="color: greenyellow;" href="http://muckrack.com">MuckRack</a> - Extensive database of U.S. government public records obtained through federal and state public records requests. Automated tool that will make public records requests and follow up until records are obtained on your behalf.</li>
+                            <li><a style="color: greenyellow;" href="http://www.nsaspeaker.org">National Speakers Association</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.newswise.com">Newswise</a></li>
+                            <li><a style="color: greenyellow;" href="https://oedci.uspto.gov/OEDCI/">Patent Attorneys/Agent Search</a> - Official listing of U.S. attorneys qualified to represent individuals in U.S. patent office proceedings.</li>
+                            <li><a style="color: greenyellow;" href="https://prnmedia.prnewswire.com">PRNewswire</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.researcherid.com">ReseacherID</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.shesource.org">SheSource</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.speakezee.org">Speakezee</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.sources.com">Sources</a></li>
+                            <li><a style="color: greenyellow;" href="https://trexpertwitness.com">TRExpertWitness</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.zintro.com">Zintro</a></li>
+                            </ul>
+                            <h2 id="company-research"> Company Research</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="http://www.allstocks.com/links">AllStocksLinks</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.bbb.org">Better Business Bureau</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.bizeurope.com">Bizeurope</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.bloomberg.com/research/company/overview/overview.asp">Bloomberg</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.ebscohost.com/academic/business-source-complete">Business Source</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.bvdinfo.com">Bureau Van Dijk</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.canada.ca/en/services/business/research.html">Canadian Business Research</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.commercial-register.sg.ch/home/worldwide.html">Company Registration Round the World</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.comparably.com">Company Research Resources by Country Comparably</a></li>
+                            <li><a style="color: greenyellow;" href="http://competeshark.com">CompeteShark</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.corporateinformation.com">Corporate Information</a> - Aggregated information from publicly available sources on publicly traded companies worldwide.</li>
+                            <li><a style="color: greenyellow;" href="https://www.crunchbase.com">CrunchBase</a> - Detailed information on startup businesses, with a specific focus on funding sources and funding procedures used by specific businesses. </li>
+                            <li><a style="color: greenyellow;" href="https://connect.data.com">Data.com Connect</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.edgar-online.com">EDGAR U.S. Securities and Exchange Commission Filings</a> - Periodic reports and extensive corporate disclosures from all businesses publicly traded in the United States.</li>
+                            <li><a style="color: greenyellow;" href="http://www.europages.co.uk">Europages</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.ebr.org">European Business Register</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.ezilon.com">Ezilon</a></li>
+                            <li><a style="color: greenyellow;" href="https://global.factiva.com">Factiva</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.forbes.com/global2000/">Forbes Global 2000</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.glassdoor.com">Glassdoor</a></li>
+                            <li><a style="color: greenyellow;" href="http://globaledge.msu.edu">globalEdge</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.guidestar.org">GuideStar</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.hoovers.com">Hoovers</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.inc.com/inc5000">Inc. 5000</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.ispionage.com">iSpionage</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.judyrecords.com/">Judyrecords</a> - Free. Nationwide search of 400 million+ United States court cases.</li>
+                            <li><a style="color: greenyellow;" href="http://www.icaew.com/en/library/subject-gateways/business-management/company-administration/knowledge-guide-international-company-registration">Knowledge guide to international company registration</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.linkedin.com">Linkedin</a> - Commonly used social-media platform with a focus on professional profiles and recruitment. Spans a wide variety of industries. Very useful for gathering information on what specific individuals are active within an entity.</li>
+                            <li><a style="color: greenyellow;" href="https://en.wikipedia.org/wiki/List_of_company_registers">National Company Registers</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.mergentintellect.com">Mergent Intellect</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.mergentonline.com/login.php">Mergent Online</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.notablist.com">Notablist</a></li>
+                            <li><a style="color: greenyellow;" href="http://orbisdirectory.bvdinfo.com/version-20161014/OrbisDirectory/Companies">Orbis directory</a></li>
+                            <li><a style="color: greenyellow;" href="https://opencorporates.com">OpenCorporates</a> - Global search of registered corporate entities and their associated individual officers or investors.</li>
+                            <li><a style="color: greenyellow;" href="https://register.openownership.org/">OpenOwnership Register</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.gov.uk/government/publications/overseas-registries/overseas-registries">Overseas Company Registers</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.plunkettresearchonline.com">Plunkett Research</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.scoot.co.uk">Scoot</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.semrush.com">SEMrush</a></li>
+                            <li><a style="color: greenyellow;" href="https://serpstat.com">Serpstat</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.spyfu.com">SpyFu</a></li>
+                            <li><a style="color: greenyellow;" href="https://unicourt.com/">UniCourt</a> - Limited free searches, premium data upsell. Nationwide search of 100 million+ United States court cases.</li>
+                            <li><a style="color: greenyellow;" href="http://www.vault.com">Vault</a> - Well-known ranking of largest United States Corporations.</li>
+                            <li><a style="color: greenyellow;" href="http://www.xing.com">Xing</a></li>
+                            <li><a style="color: greenyellow;" href="https://case.law/">Caselaw Access Project</a> - Collection of full text of historical (not up-to-date) cases from United States state appellate courts.  </li>
+                            <li><a style="color: greenyellow;" href="https://www.brownbook.net/">BrownBook</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.corporationwiki.com/">CorporationWiki</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.goodfirms.co/">GoodFirms</a></li>
+                            <li><a style="color: greenyellow;" href="https://youcontrol.com.ua/en/">YouControl</a></li>
+                            </ul>
+                            <h2 id="job-search-resources"> Job Search Resources</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="http://www.beyond.com">Beyond</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.campuscareercenter.com">CampusCareerCenter</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.careerbuilder.com">CareerBuilder</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.collegerecruiter.com">College Recruiter</a></li>
+                            <li><a style="color: greenyellow;" href="http://losangeles.craigslist.org">Craiglist</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.cvfox.com">CVFox</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.dice.com">Dice</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.eluta.ca">Eluta (Canada)</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.eurojobs.com">Eurojobs</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.fish4.co.uk">Fish4Jobs</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.glassdoor.com">Glassdoor</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.headhunter.com">Headhunter</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.indeed.com">Indeed</a> - is an online job searching website that gives job seekers free access to search for a job, post their resumes, and research companies.</li>
+                            <li><a style="color: greenyellow;" href="http://www.jobs.pl">Jobs (Poland)</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.jobsite.co.uk">Jobsite (UK)</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.linkedin.com">Linkedin</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.monster.com">Monster</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.naukri.com">Naukri (India)</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.reed.co.uk">Reed (UK)</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.seek.com.au">Seek (Australia)</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.simplyhired.com">SimplyHired</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.xing.com">Xing</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.ziprecruiter.com">ZipRecruiter</a></li>
+                            <li><a style="color: greenyellow;" href="https://recruitin.net/">RecruitEm</a></li>
+                            </ul>
+                            <h2 id="qa-sites"> Q&amp;A Sites</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="http://www.answers.com">Answers.com</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.ask.com">Ask</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.ehow.com">eHow</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.quora.com">Quora</a></li>
+                            <li><a style="color: greenyellow;" href="http://stackexchange.com">StackExchange</a></li>
+                            <li><a style="color: greenyellow;" href="http://answers.yahoo.com">Yahoo Answers</a></li>
+                            <li><a style="color: greenyellow;" href="https://otvet.mail.ru/">Ответы</a></li>
+                            </ul>
+                            <h2 id="blog-search"> Blog Search</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="http://www.blogsearchengine.org">BlogSearchEngine</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.notey.com">Notey</a> - Blog post search engine.</li>
+                            <li><a style="color: greenyellow;" href="https://www.sphere.com">Sphere</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.twingly.com">Twingly</a></li>
+                            </ul>
+                            
+                            <h2 id="keywords-discovery-and-research"> Keywords Discovery and Research</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="http://adwords.google.com">Google Adwords</a> - Get monthly keyword volume data and stats.</li>
+                            <li><a style="color: greenyellow;" href="https://www.google.com/trends">Google Trends</a> - See how many users are searching for specific keywords.</li>
+                            <li><a style="color: greenyellow;" href="http://www.keyworddiscovery.com">Keyword Discovery</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.keywordspy.com">Keyword Spy</a></li>
+                            <li><a style="color: greenyellow;" href="http://keywordtool.io">KeywordTool</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.onelook.com/reverse-dictionary.shtml">One Look Reverse Dictionary</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.wordtracker.com">Word Tracker</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.soovle.com">Soovle</a></li>
+                            <li><a style="color: greenyellow;" href="http://ubersuggest.org">Ubersuggest</a></li>
+                            <li><a style="color: greenyellow;" href="https://wordstat.yandex.com">Yandex Wordstat</a></li>
+                            </ul>
+                            <h2 id="web-history-and-website-capture"> Web History and Website Capture</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="http://archive.is">Archive.is</a> - is a website that allows you to archive a snapshot of you websites that will always remains online evenif the original page disappears.</li>
+                            <li><a style="color: greenyellow;" href="http://softbytelabs.com/wp/blackwidow/">BlackWidow</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.cachedpages.com">CashedPages</a></li>
+                            <li><a style="color: greenyellow;" href="http://cachedview.com">CachedView</a></li>
+                            <li><a style="color: greenyellow;" href="https://stored.website">stored.website</a></li>
+                            <li><a style="color: greenyellow;" href="http://archive.org/web/web.php">Wayback Machine</a> - Explore the history of a website.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/jsvine/waybackpack">Wayback Machine Archiver</a></li>
+                            <li><a style="color: greenyellow;" href="https://github.com/akamhy/waybackpy">waybackpy</a> - Python package &amp; CLI tool that interfaces the Wayback Machine APIs.</li>
+
+                            <li>see the <a style="color: greenyellow;" href="https://github.com/mbiesiad/awesome-translations#tools">Awesome Translations list</a></li>
+                            </ul>
+                            <h2 id="image-search"> Image Search</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="https://image.baidu.com">Baidu Images</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.bing.com/images">Bing Images</a></li>
+                            <li><a style="color: greenyellow;" href="https://clarify.io">Clarify</a></li>
+                            <li><a style="color: greenyellow;" href="https://facecheck.id">FaceCheck.ID</a> - Facial recognition search engine.</li>
+                            <li><a style="color: greenyellow;" href="https://flickr.com/search/">Flickr</a></li>
+                            <li><a style="color: greenyellow;" href="https://images.google.com">Google Image</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.imageidentify.com">Image Identification Project</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.imageraider.com">Image Raider</a></li>
+                            <li><a style="color: greenyellow;" href="http://karmadecay.com">KarmaDecay</a></li>
+                            <li><a style="color: greenyellow;" href="https://search.lycos.com">Lycos Image Search</a></li>
+                            <li><a style="color: greenyellow;" href="https://photobucket.com">PhotoBucket</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.pictriev.com">PicTriev</a> - a face search engine.</li>
+                            <li><a style="color: greenyellow;" href="https://pimeyes.com">PimEyes</a> - an online face search engine that goes through the Internet to find pictures containing given faces. </li>
+                            <li><a style="color: greenyellow;" href="https://tineye.com">TinEye</a> - Reverse image search engine.</li>
+                            <li><a style="color: greenyellow;" href="https://images.search.yahoo.com">Yahoo Image Search</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.yandex.com/images">Yandex Images</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.betaface.com/demo.html">Betaface</a></li>
+                            <li><a style="color: greenyellow;" href="https://search4faces.com/">Search4faces</a></li>
+                            </ul>
+                            <h2 > Image Analysis</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="https://github.com/aydinnyunus/exiflooter">ExifLooter</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.sno.phy.queensu.ca/~phil/exiftool">ExifTool</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.exif-search.com">Exif Search</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.fotoforensics.com">FotoForensics</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.getghiro.org">Ghiro</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.impulseadventure.com/photo/jpeg-snoop.html">ImpulseAdventure</a></li>
+                            <li><a style="color: greenyellow;" href="http://exif.regex.info/">Jeffreys Image Metadata Viewer</a></li>
+                            <li><a style="color: greenyellow;" href="https://sourceforge.net/projects/jpegsnoop">JPEGsnoop</a></li>
+                            <li><a style="color: greenyellow;" href="https://29a.ch/photo-forensics/">Forensically</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.diffchecker.com/image-diff/">DiffChecker</a></li>
+                            <li><a style="color: greenyellow;" href="https://imgops.com/">ImgOps</a></li>
+                            </ul>
+                            <h2 id="video-search-and-other-video-tools"> Video Search and Other Video Tools</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="http://on.aol.com">Aol Videos</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.bing.com/?scope=video">Bing Videos</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.blinkx.com">Blinkx</a></li>
+                            <li><a style="color: greenyellow;" href="http://clarify.io">Clarify</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.clipblast.com">Clip Blast</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.dailymotion.com">DailyMotion</a></li>
+                            <li><a style="color: greenyellow;" href="http://deturl.com">Deturl</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.downloadhelper.net">DownloadHealper</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.earthcam.com">Earthcam</a></li>
+                            <li><a style="color: greenyellow;" href="http://insecam.org/">Insecam</a></li>
+                            <li><a style="color: greenyellow;" href="https://chrome.google.com/webstore/detail/frame-by-frame/cclnaabdfgnehogonpeddbgejclcjneh/">Frame by Frame</a> - Browser plugin that allows you to watch YouTube videos frame by frame.</li>
+                            <li><a style="color: greenyellow;" href="https://findyoutubevideo.thetechrobo.ca/">Find YouTube Video</a> - Searches currently 5 YouTube archives for specific videos by ID, which is really useful for finding deleted or private YouTube videos.</li>
+                            <li><a style="color: greenyellow;" href="http://www.geosearchtool.com">Geosearch</a></li>
+                            <li><a style="color: greenyellow;" href="https://archive.org/details/opensource_movies">Internet Archive: Open Source Videos</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.liveleak.com">LiveLeak</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.metacafe.com">Metacafe</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.metatube.com">Metatube</a></li>
+                            <li><a style="color: greenyellow;" href="https://github.com/bibanon/tubeup">Tubuep</a> - Downloads online videos via yt-dlp, then reuploads them to the Internet Archive for preservation. Note: if you would like to archive comments too, you need to install version 0.0.33 and use the --get-comments flag, however you will still have the new yt-dlp fixes and features, but existing tubeup bugs cannot be fixed, unless you do manual work.</li>
+                            <li><a style="color: greenyellow;" href="http://www.veoh.com">Veoh</a></li>
+                            <li><a style="color: greenyellow;" href="https://vimeo.com">Vimeo</a></li>
+                            <li><a style="color: greenyellow;" href="http://video.search.yahoo.com">Yahoo Video Search</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.youtube.com">YouTube</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.amnestyusa.org/citizenevidence">YouTube Data Viewer</a></li>
+                            <li><a style="color: greenyellow;" href="http://ccsubs.com/">ccSUBS</a> - Download Closed Captions &amp; Subtitles from YouTube</li>
+                            <li><a style="color: greenyellow;" href="https://mattw.io/youtube-metadata/">YouTube Metadata</a></li>
+                            <li><a style="color: greenyellow;" href="https://mattw.io/youtube-geofind/">YouTube Geofind</a></li>
+                            <li><a style="color: greenyellow;" href="https://github.com/yt-dlp/yt-dlp/">yt-dlp</a> - Downloads videos from almost any online platform, along with information, thumbnails, subtitles, descriptions, and comments (comments only on a select few sites like Youtube and a few small sites). If a site is not supported, or a useful or crucial piece of metadata, including comments, is missing, create an issue.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/yaochih/awesome-video-stabilization">Video Stabilization Methods</a></li>
+                            <li><a style="color: greenyellow;" href="https://filmot.com/">Filmot</a> - Search within YouTube subtitles. Indexing over 573 million captions across 528 million videos and 45 million channels.</li>
+                            </ul>
+                            <h2 id="geospatial-research-and-mapping-tools"> Geospatial Research and Mapping Tools</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="http://www.atlasify.com">Atlasify</a></li>
+                            <li><a style="color: greenyellow;" href="http://batchgeo.com">Batchgeo</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.bing.com/maps">Bing Maps</a></li>
+                            <li><a style="color: greenyellow;" href="https://cartodb.com">CartoDB</a></li>
+                            <li><a style="color: greenyellow;" href="http://colorbrewer2.org">Colorbrewer</a></li>
+                            <li><a style="color: greenyellow;" href="https://crowdmap.com">CrowdMap</a></li>
+                            <li><a style="color: greenyellow;" href="https://ctrlq.org/maps/address">CTLRQ Address Lookup</a></li>
+                            <li><a style="color: greenyellow;" href="https://dominoc925-pages.appspot.com/mapplets/cs_mgrs.html">Dominoc925</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.mapchannels.com/dualmaps7/map.htm">DualMaps</a></li>
+                            <li><a style="color: greenyellow;" href="http://geogig.org">GeoGig</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.geonames.org">GeoNames</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.esri.com">Esri</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.flashearth.com">Flash Earth</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.google.com/earth">Google Earth</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.google.com/intl/en/earth/versions/#earth-pro">Google Earth Pro</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.google.com/maps">Google Maps</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.google.com/maps/about/mymaps">Google My Maps</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.gpsvisualizer.com">GPSVisualizer</a></li>
+                            <li><a style="color: greenyellow;" href="http://grass.osgeo.org">GrassGIS</a></li>
+                            <li><a style="color: greenyellow;" href="http://here.com">Here</a></li>
+                            <li><a style="color: greenyellow;" href="https://github.com/TeehanLax/Hyperlapse.js">Hyperlapse</a></li>
+                            <li><a style="color: greenyellow;" href="http://inspire-geoportal.ec.europa.eu">Inspire Geoportal</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.instantatlas.com">InstantAtlas</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.instantstreetview.com">Instant Google Street View</a></li>
+                            <li><a style="color: greenyellow;" href="http://kartograph.org">Kartograph</a></li>
+                            <li><a style="color: greenyellow;" href="http://leafletjs.com">Leaflet</a></li>
+                            <li><a style="color: greenyellow;" href="http://mapalist.com">MapAList</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.mapbox.com">MapBox</a></li>
+                            <li><a style="color: greenyellow;" href="https://mapchart.net">Mapchart.net</a></li>
+                            <li><a style="color: greenyellow;" href="http://maperitive.net">Maperitive</a></li>
+                            <li><a style="color: greenyellow;" href="https://maphub.net">MapHub</a></li>
+                            <li><a style="color: greenyellow;" href="http://mapjam.com">MapJam</a></li>
+                            <li><a style="color: greenyellow;" href="https://mapline.com">Mapline</a></li>
+                            <li><a style="color: greenyellow;" href="https://maps.co">Map Maker</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.mapquest.com">Mapquest</a></li>
+                            <li><a style="color: greenyellow;" href="http://modestmaps.com">Modest Maps</a></li>
+                            <li><a style="color: greenyellow;" href="https://github.com/ngageoint">NGA GEOINT</a></li>
+                            <li><a style="color: greenyellow;" href="http://openlayers.org">OpenLayers</a></li>
+                            <li><a style="color: greenyellow;" href="http://polymaps.org">Polymaps</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.lib.utexas.edu/maps">Perry Castaneda Library</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.openstreetmap.org">Open Street Map</a></li>
+                            <li><a style="color: greenyellow;" href="http://qgis.org">QGIS</a></li>
+                            <li><a style="color: greenyellow;" href="https://chrome.google.com/webstore/detail/quick-maps/bgbojmobaekecckmomemopckmeipecij">QuickMaps</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.sasgis.org/sasplaneta/">SAS Planet</a>  - Software used to view, download and stitch satellite images.</li>
+                            <li><a style="color: greenyellow;" href="http://storymaps.arcgis.com/en">StoryMaps</a></li>
+                            <li><a style="color: greenyellow;" href="http://scribblemaps.com">Scribble Maps</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.tableausoftware.com">Tableau</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.mgmaps.com/kml/#view">View in Google Earth</a></li>
+                            <li><a style="color: greenyellow;" href="http://wikimapia.org">Wikimapia</a></li>
+                            <li><a style="color: greenyellow;" href="http://worldmap.harvard.edu">WorldMap Harvard</a></li>
+                            <li><a style="color: greenyellow;" href="https://cipher387.github.io/osintmap/">Worldwide OSINT Tools Map</a> - A global map of databases and OSINT sources by applicable location.</li>
+                            <li><a style="color: greenyellow;" href="http://www.viamichelin.com">ViaMichelin</a></li>
+                            <li><a style="color: greenyellow;" href="https://maps.yahoo.com">Yahoo Maps</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.zeemaps.com">Zeemaps</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.sentinel-hub.com/explore/sentinelplayground/">Sentinel Hub</a></li>
+                            <li><a style="color: greenyellow;" href="https://discover.digitalglobe.com/">Maxar</a></li>
+                            <li><a style="color: greenyellow;" href="https://earthexplorer.usgs.gov/">USGS (EarthExplorer)</a></li>
+                            <li><a style="color: greenyellow;" href="https://zoom.earth/">Zoom Earth</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.suncalc.org/">SunCalc</a></li>
+                            <li><a style="color: greenyellow;" href="https://livingatlas.arcgis.com/en/browse/">ArcGIS</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.pic2map.com/">Pic2Map</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.mapillary.com/app/">Mapillary</a></li>
+                            <li><a style="color: greenyellow;" href="https://kartaview.org/map/">KartaView</a></li>
+                            <li><a style="color: greenyellow;" href="https://satellites.pro/">Satellites Pro</a></li>
+                            <li><a style="color: greenyellow;" href="https://liveuamap.com/">Liveuamap</a></li>
+                            <li><a style="color: greenyellow;" href="https://maps.descarteslabs.com/">Descartes Labs</a></li>
+                            <li><a style="color: greenyellow;" href="https://map.baidu.com/">Baidu Maps</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.mapchecking.com/">MapChecking</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.windy.com/">Windy</a></li>
+                            <li><a style="color: greenyellow;" href="https://soar.earth/">SOAR</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.digikam.org/">digiKam</a></li>
+                            <li><a style="color: greenyellow;" href="https://github.com/ANG13T/SatIntel">SatIntel</a></li>
+                            </ul>
+                              
+                            <h2 id="web-monitoring"> Web Monitoring</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="http://alltop.com">Alltop</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.awasu.com">Awasu</a></li>
+                            <li><a style="color: greenyellow;" href="https://bridge.leslibres.org">Bridge.Leslibres</a></li>
+                            <li><a style="color: greenyellow;" href="https://bridge.suumitsu.eu">Bridge.Suumitsu</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.changedetect.com">ChangeDetect</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.changedetection.com">ChangeDetection</a></li>
+                            <li><a style="color: greenyellow;" href="http://bitreading.com/deltafeed">Deltafeed</a></li>
+                            <li><a style="color: greenyellow;" href="http://digg.com/login?next=%2Freader">DiggReader</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.qsensei.com">FeedBooster</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.feederator.org">Feederator</a></li>
+                            <li><a style="color: greenyellow;" href="http://feed.exileed.com">Feed Exileed</a></li>
+                            <li><a style="color: greenyellow;" href="http://feed.janicek.co">Feed Filter Maker</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.feedly.com">Feedly</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.feedreader.com">FeedReader</a></li>
+                            <li><a style="color: greenyellow;" href="http://fetchrss.com">FetchRSS</a></li>
+                            <li><a style="color: greenyellow;" href="http://flipboard.com">Flipboard</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.followthatpage.com">FollowThatPage</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.google.com/alerts">Google Alerts</a> - A content change detection and notification service.</li>
+                            <li><a style="color: greenyellow;" href="http://www.infominder.com/webminder">InfoMinder</a></li>
+                            <li><a style="color: greenyellow;" href="https://en.mention.com">Mention</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.netvibes.com">Netvibes</a></li>
+                            <li><a style="color: greenyellow;" href="http://newsblur.com">Newsblur</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.jetbrains.com/omea/reader">OmeaReader</a></li>
+                            <li><a style="color: greenyellow;" href="http://onwebchange.com">OnWebChange</a></li>
+                            <li><a style="color: greenyellow;" href="http://reederapp.com">Reeder</a></li>
+                            <li><a style="color: greenyellow;" href="https://bridge.suumitsu.eu">RSS Bridge</a></li>
+                            <li><a style="color: greenyellow;" href="https://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp">RSS Feed Reader</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.rssmicro.com">RSS Micro</a></li>
+                            <li><a style="color: greenyellow;" href="http://ctrlq.org/rss">RSS Search Engine</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.rsssearchhub.com">RSS Search Hub</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.rssowl.org">RSSOwl</a></li>
+                            <li><a style="color: greenyellow;" href="http://selfoss.aditu.de">Selfoss</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.silobreaker.com">Silobreaker</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.talkwalker.com">Talkwalker</a></li>
+                            <li><a style="color: greenyellow;" href="http://theoldreader.com">The Old Reader</a></li>
+                            <li><a style="color: greenyellow;" href="http://versionista.com">versionista</a></li>
+                            <li><a style="color: greenyellow;" href="https://visualping.io">visualping</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.getwebreader.com">WebReader</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.aignes.com/index.htm">WebSite Watcher</a></li>
+                            <li><a style="color: greenyellow;" href="http://winds.getstream.io">Winds</a></li>
+                            </ul>
+
+                            <h2 id="social-network-analysis"> Social Network Analysis</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="https://gephi.org">Gephi</a> - is an open-source graph and network visualization software.</li>
+                            <li><a style="color: greenyellow;" href="http://www.casos.cs.cmu.edu/projects/ora/software.php">ORA</a></li>
+                            <li><a style="color: greenyellow;" href="http://www.fmsasg.com">Sentinel Visualizer</a></li>
+                            <li><a style="color: greenyellow;" href="https://wynyardgroup.com">Wynyard Group</a></li>
+                            <li><a style="color: greenyellow;" href="https://vis.occrp.org">Visual Investigative Scenarios</a></li>
+                            </ul>
+                            <h2 id="privacy-and-encryption-tools"> Privacy and Encryption Tools</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="https://www.abine.com">Abine</a></li>
+                            <li><a style="color: greenyellow;" href="https://adium.im">Adium</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.boxcryptor.com">boxcryptor</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.piriform.com/ccleaner">CCleaner</a></li>
+                            <li><a style="color: greenyellow;" href="https://chatsecure.org">Chatsecure</a></li>
+                            <li><a style="color: greenyellow;" href="https://disconnect.me">Disconnect</a></li>
+                            <li><a style="color: greenyellow;" href="http://donottrack.us">Do Not Track</a></li>
+                            <li><a style="color: greenyellow;" href="https://duckduckgo.com">Duck Duck Go Search Engine</a></li>
+                            <li><a style="color: greenyellow;" href="http://encfsmp.sourceforge.net">EncSF MP</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.encryptedcloud.com">Encrypted Cloud</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.epicbrowser.com">Epic Privacy Browser</a></li>
+                            <li><a style="color: greenyellow;" href="http://eraser.heidi.ie">Eraser</a></li>
+                            <li><a style="color: greenyellow;" href="https://support.apple.com/en-us/HT204837">FileVault</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.ghostery.com">Ghostery</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.gnupg.org/download/index.html">GNU PG</a></li>
+                            <li><a style="color: greenyellow;" href="https://gpgtools.org">GPG Tools</a></li>
+                            <li><a style="color: greenyellow;" href="https://guardianproject.info">Guardian Project</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.guerrillamail.com">Guerrilla Mail</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.hotspotshield.com">Hotspot Shield</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.eff.org/https-everywhere/">HTTPs Everywhere</a></li>
+                            <li><a style="color: greenyellow;" href="https://geti2p.net">I2P</a></li>
+                            <li><a style="color: greenyellow;" href="http://justdelete.me">justdeleteme</a></li>
+                            <li><a style="color: greenyellow;" href="http://keepass.info">KeePass Password Safe</a> - is a free and open-source password manager that uses the most secure encryption algorithms to safegard your passwords.</li>
+                            <li><a style="color: greenyellow;" href="https://lastpass.com">Lastpass</a></li>
+                            <li><a style="color: greenyellow;" href="https://lockbin.com">Lockbin</a></li>
+                            <li><a style="color: greenyellow;" href="https://mailbox.org">Mailbox</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.mailvelope.com">Mailvelope</a></li>
+                            <li><a style="color: greenyellow;" href="http://masterpasswordapp.com">Master Password</a></li>
+                            <li><a style="color: greenyellow;" href="http://nixory.sourceforge.net">Nixory</a></li>
+                            <li><a style="color: greenyellow;" href="https://noscript.net">NoScript</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.opendns.com/home-internet-security">Open DNS</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.enigmail.net/index.php/en">Open PGP</a></li>
+                            <li><a style="color: greenyellow;" href="https://oscobo.co.uk">Oscobo Search Engine</a></li>
+                            <li><a style="color: greenyellow;" href="https://ossec.github.io">OSSEC</a></li>
+                            <li><a style="color: greenyellow;" href="https://panopticlick.eff.org">Panopticlick</a></li>
+                            <li><a style="color: greenyellow;" href="http://forums.peerblock.com">Peerblock</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.pidgin.im">Pidgin</a></li>
+                            <li><a style="color: greenyellow;" href="https://chrome.google.com/webstore/detail/pixelblock/jmpmfcjnflbcoidlgapblgpgbilinlem">Pixel Block</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.eff.org/privacybadger">Privacy Badger</a></li>
+                            <li><a style="color: greenyellow;" href="http://privazer.com">Privazer</a></li>
+                            <li><a style="color: greenyellow;" href="https://protonmail.com">Proton Mail</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.qubes-os.org">Qubes</a></li>
+                            <li><a style="color: greenyellow;" href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf?hl=en">Script Safe</a></li>
+                            <li><a style="color: greenyellow;" href="https://securesha.re">Securesha</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.silentcircle.com">Silent circle</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.snort.org">Snort</a></li>
+                            <li><a style="color: greenyellow;" href="https://spideroak.com">Spideroak</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.pelock.com/products/steganography-online-codec">Steganography Online Codec</a></li>
+                            <li><a style="color: greenyellow;" href="https://ssd.eff.org">Surveilliance Self Defense</a></li>
+                            <li><a style="color: greenyellow;" href="https://tails.boum.org">Tails</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.mozilla.org/en-US/thunderbird">Thunderbird</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.torproject.org">Tor Project</a></li>
+                            <li><a style="color: greenyellow;" href="https://github.com/gorhill/uBlock">uBlock Origin</a></li>
+                            <li><a style="color: greenyellow;" href="https://wickr.com">Wickr</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.mywot.com">WOT</a></li>
+                            <li><a style="color: greenyellow;" href="http://zmail.sourceforge.net">ZMail</a></li>
+                            </ul>
+                            <h2 id="dns"> DNS</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="https://github.com/caffix/amass">Amass</a> - The amass tool searches Internet data sources, performs brute force subdomain enumeration, searches web archives, and uses machine learning to generate additional subdomain name guesses. DNS name resolution is performed across many public servers so the authoritative server will see the traffic coming from different locations. Written in Go.</li>
+                            <li><a style="color: greenyellow;" href="https://findsubdomains.com/">findsubdomains</a> - Automatically scans different sources to collect as many subdomains as can. Validate all the data through various tools and services to provide correct results without waiting.</li>
+                            <li><a style="color: greenyellow;" href="https://columbus.elmasy.com/">Columbus Project</a> - Columbus Project is an advanced subdomain discovery service with fast, powerful and easy to use API.</li>
+                            </ul>
+                            <h2 id="maritime"> Maritime</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="https://www.vesselfinder.com">VesselFinder</a> - a FREE AIS vessel tracking web site. VesselFinder displays real time ship positions and marine traffic detected by global AIS network.</li>
+                            </ul>
+                            <h2 id="other-tools"> Other Tools</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="http://online-barcode-reader.inliteresearch.com">Barcode Reader</a> - Decode barcodes in C#, VB, Java, C\C++, Delphi, PHP and other languages.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/aancw/Belati">Belati</a> - Belati - The Traditional Swiss Army Knife For OSINT. Belati is tool for Collecting Public Data &amp; Public Document from Website and other service for OSINT purpose.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/Bevigil/BeVigil-OSINT-CLI">BeVigil-CLI</a> - A unified command line interface and python library for using BeVigil OSINT API to search for assets such as subdomains, URLs, applications indexed from mobile applications.</li>
+                            <li><a style="color: greenyellow;" href="https://canthide.me">CantHide</a> - CantHide finds previous locations by looking at a given social media account.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/crowdsecurity/crowdsec">CrowdSec</a> - An open source, free, and collaborative IPS/IDS software written in Go, able to analyze visitor behavior &amp; provide an adapted response to all kinds of attacks.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/DataSploit/datasploit">Datasploit</a> - Tool to perform various OSINT techniques on usernames, emails addresses, and domains.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/its0x08/duckduckgo">DuckDuckGo URL scraper</a> - A simple DuckDuckGo URL scraper. </li>
+                            <li><a style="color: greenyellow;" href="https://github.com/shadawck/glit">Glit</a> -  Retrieve all mails of users related to a git repository, a git user or a git organization.</li>
+                            <li><a style="color: greenyellow;" href="https://greynoise.io/">Greynoise</a> - &quot;Anti-Threat Intelligence&quot; Greynoise characterizes the background noise of the internet, so the user can focus on what is actually important.  <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="https://github.com/GreyNoise-Intelligence/pygreynoise">pygreynoise</a> - Greynoise Python Library</li>
+                            </ul>
+                            </li>
+                            <li><a style="color: greenyellow;" href="https://github.com/laramies/theHarvester">The Harvester</a> - Gather emails, subdomains, hosts, employee names, open ports and banners from different public sources like search engines, PGP key servers and SHODAN computer database.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/intrigueio/intrigue-core">Intrigue Core</a> - Framework for attack surface discovery.</li>
+                            <li><a style="color: greenyellow;" href="https://accentusoft.com/">LinkScope</a> - LinkScope is an open source intelligence (OSINT) graphical link analysis tool and automation platform for gathering and connecting information for investigative tasks.<ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="https://github.com/AccentuSoft/LinkScope_Client">LinkScope Client</a> - LinkScope Client Github repository.</li>
+                            </ul>
+                            </li>
+                            <li><a style="color: greenyellow;" href="https://www.maltego.com/">Maltego</a> - Maltego is an open source intelligence (OSINT) and graphical link analysis tool for gathering and connecting information for investigative tasks.</li>
+                            <li><a style="color: greenyellow;" href="https://www.hunch.ly/">Hunchly</a> - Hunchly is a web capture tool designed specifically for online investigations.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/OpenRefine">OpenRefine</a> - Free &amp; open source power tool for working with messy data and improving it.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/s0md3v/Orbit">Orbit</a> - Draws relationships between crypto wallets with recursive crawling of transaction history.</li>
+                            <li><a style="color: greenyellow;" href="http://osintframework.com/">OSINT Framework</a> - Web based framework for OSINT.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/milo2012/osintstalker">OsintStalker</a> - Python script for Facebook and geolocation OSINT.</li>
+                            <li><a style="color: greenyellow;" href="http://www.outwit.com">Outwit</a> - Find, grab and organize all kinds of data and media from online sources.</li>
+                            <li><a style="color: greenyellow;" href="https://escraper.emagicone.com/">eScraper</a> - Grab product descriptions, prices, image
+                            urls and other data effortlessly</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/s0md3v/Photon">Photon</a> - Crawler designed for OSINT</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/pownjs/pown-recon">Pown Recon</a> - Target reconnaissance framework powered by graph theory.</li>
+                            <li><a style="color: greenyellow;" href="https://quickcode.io/">QuickCode</a> - Python and R data analysis environment.</li>
+                            <li><a style="color: greenyellow;" href="https://secapps.com/market/recon">SecApps Recon</a> - Information gathering and target reconnaissance tool and UI.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/kpcyrd/sn0int">sn0int</a> - Semi-automatic OSINT framework and package manager.</li>
+                            <li><a style="color: greenyellow;" href="https://www.spiderfoot.net">SpiderFoot</a> - SpiderFoot is an open source intelligence (OSINT) automation platform with over 200 modules for threat intelligence, attack surface monitoring, security assessments and asset discovery.<ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="https://github.com/smicallef/spiderfoot">SpiderFoot</a> - SpiderFoot Github repository.</li>
+                            </ul>
+                            </li>
+                            <li><a style="color: greenyellow;" href="https://github.com/3nock/SpiderSuite">SpiderSuite</a> - An advance, cross-platform, GUI web security crawler.</li>
+                            <li><a style="color: greenyellow;" href="https://serpapi.com/">SerpApi</a> - Scrapes Google search and 25+ search engines with ease and retruns a raw JSON. Supports <a style="color: greenyellow;" href="https://serpapi.com/integrations">10 API wrappers</a>.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/Alaa-abdulridha/SerpScan">SerpScan</a> - Powerful PHP script designed to allow you to leverage the power of dorking straight from the comfort of your command line. Analyzes data from Google, Bing, Yahoo, Yandex, and Badiu.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/s0md3v/Zen">Zen</a> - Find email addresses of Github users</li>
+                            <li><a style="color: greenyellow;" href="https://osint.sh/">OSINT.SH</a> - Information Gathering Toolset.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/ElevenPaths/FOCA">FOCA</a> - Tool to find metadata and hidden information in the documents.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/3nock/sub3suite">Sub3 Suite</a> - A research-grade suite of tools for intelligence gathering &amp; target mapping with both active and passive(100+ modules) intelligence gathering capabilities.</li>
+                            </ul>
+                            <h2 id="threat-intelligence"> Threat Intelligence</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="https://www.gitguardian.com/monitor-public-github-for-secrets">GitGuardian - Public GitHub Monitoring</a> - Monitor public GitHub repositories in real time. Detect secrets and sensitive information to prevent hackers from using GitHub as a backdoor to your business.</li>
+                            <li><a style="color: greenyellow;" href="https://rescure.fruxlabs.com/">REScure Threat Intel Feed</a> - REScure is an independent threat intelligence project which we undertook to enhance our understanding of distributed systems, their integration, the nature of threat intelligence and how to efficiently collect, store, consume, distribute it.</li>
+                            <li><a style="color: greenyellow;" href="https://otx.alienvault.com/">OTX AlienVault</a> - Open Threat Exchange is the neighborhood watch of the global intelligence community. It enables private companies, independent security researchers, and government agencies to openly collaborate and share the latest information about emerging threats, attack methods, and malicious actors, promoting greater security across the entire community.</li>
+                            <li><a style="color: greenyellow;" href="https://github.com/s-rah/onionscan">OnionScan</a> - Free and open source tool for investigating the Dark Web. Its main goal is to help researchers and investigators monitor and track Dark Web sites.</li>
+                            </ul>
+                            <h2 id="osint-videos"> OSINT Videos</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="https://www.youtube.com/watch?v=_YRs28yBYuI">Data to Go</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.youtube.com/watch?v=F7pYHN9iC9I">Amazing mind reader reveals his ‘gift’</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.youtube.com/watch?v=Rn4Rupla11M">See how easily freaks can take over your life</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.youtube.com/c/Bendobrown">Bendobrown</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.youtube.com/playlist?list=PLs4eo9Tja8bj3jJvv42LxOkhc2_ylpS9y">SANS OSINT Summit 2021 (Playlist)</a></li>
+                            </ul>
+
+                            <h2 id="other-resources"> Other Resources</h2>
+                            <ul style="columns: 2; column-gap: 20px; /* Jarak antara kolom */ list-style: none; padding: 0;">
+                            <li><a style="color: greenyellow;" href="http://bit.ly/bcattools">Bellingcat&#39;s Online Investigation Toolkit</a></li>
+                            <li><a style="color: greenyellow;" href="https://docs.google.com/spreadsheets/d/1vNJRMrlwI7i06diBJtRJWrvt4YuPOqlbUV5o00P_YmE/edit#gid=1378107220">Bellingcat Online Researcher Survey: Tool Wishes</a> — Wishlist of OSINT tools from a February Bellingcat survey. </li>
+                            <li><a style="color: greenyellow;" href="https://www.osintdojo.com/resources/">OSINT Dojo</a></li>
+                            <li><a style="color: greenyellow;" href="https://t.me/s/osintby">OSINT Belarus</a></li>
+                            <li><a style="color: greenyellow;" href="https://freetraining.dfirdiva.com/free-osint-training">Free OSINT Training</a></li>
+                            <li><a style="color: greenyellow;" href="https://www.bellingcat.com/resources/2022/08/12/these-are-the-tools-open-source-researchers-say-they-need/">These Are the Tools Open Source Researchers Say They Need</a> — Results of a survey Bellingcat conducted in February 2022.</li>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+        function toggleList() {
+          // Dapatkan elemen daftar
+          var threatList = document.getElementById("threat-list");
+    
+          // Ubah tampilan daftar berdasarkan kondisi saat ini
+          threatList.style.display = (threatList.style.display === 'none') ? 'block' : 'none';
+        }
+      </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

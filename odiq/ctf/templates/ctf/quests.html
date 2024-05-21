@@ -1,0 +1,240 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>0SINT MANIAC</title>
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap4-neon-glow.min.css' %}">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+</head>
+
+<body class="imgloaded">
+    <div class="glitch">
+        <div style="position: fixed;" class="glitch__img"></div>
+        <div style="position: fixed;" class="glitch__img"></div>
+        <div style="position: fixed;" class="glitch__img"></div>
+        <div style="position: fixed;" class="glitch__img"></div>
+        <div style="position: fixed;" class="glitch__img"></div>
+    </div>
+    <div class="navbar-dark text-white">
+        <div class="container">
+            <nav class="navbar px-0 py-0 navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a href="/" class="pl-md-0 p-3 text-decoration-none text-light">
+                            <h3 class="bold"><span class="color_danger"><img src="{% static '/images/logo.png' %}" alt="Your Logo" class="logo" height="60px" width="50px"> OSINT</span><span class="color_white">MANIAC</span></h3>
+                        </a>
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                            <a href="/" class="p-3 text-decoration-none text-white bold">Home</a>
+                            <a href="/about" class="p-3 text-decoration-none text-light bold">About</a>
+                            <a href="/scoreboard" class="p-3 text-decoration-none text-light bold">Scoreboard</a>
+                            <a href="/profil" class="p-3 text-decoration-none text-light bold">Profil</a>
+                            {% if user.is_authenticated %}
+                                <a href="/logout" class="p-3 text-decoration-none text-light bold">Logout</a>
+                            {% else %}
+                                <a href="/login" class="p-3 text-decoration-none text-light bold">Login</a>
+                            {% endif %}      
+                    </div>
+                </div>
+            </nav>
+
+        </div>
+    </div>
+
+    <div class="jumbotron bg-transparent mb-0 pt-0 radius-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12  text-center">
+                    <h1 class="display-1 bold color_white content__title">Challenge</h1>
+                    <p class="text-grey text-spacey hackerFont lead mb-5">
+                        "Hack the Limit, Break the Boundaries. Your Potential is Infinite.🔥"
+                    </p>
+                </div>
+            </div>
+
+            <div class="row hackerFont">
+                {% for question in questions %}
+                    <div class="col-md-6 mb-3">
+                        <div class="card {{ question.category }}">
+                            {# Check if the file exists in the database #}
+                            {% if question.file %}
+                                <div class="card-header " data-target="#problem_id_{{ question.Qid }}" data-toggle="collapse" aria-expanded="false" aria-controls="problem_id_{{ question.Qid }}">
+                                    {{ question.Qtitle }} <span class="badge">{{ question.points }} points</span>
+                                </div>
+                                <div id="problem_id_{{ question.Qid }}" class="collapse card-body">
+                                    <blockquote class="card-blockquote">
+                                        <div style="display: flex;">
+                                            <h6 class="solvers">Solvers:{{ question.solved_by }} &nbsp;<span class="color_danger">Difficulty:{{ question.category }}</span> </h6>
+                                        </div>
+                                        <p>{{ question.Qdes }}</p>
+                                        <form method="POST" id="my_event_form">
+                                            {% csrf_token %}
+                                            <a target="_blank" href="{% url 'download_file' question.Qid %}" class="btn btn-outline-secondary btn-shadow"><span class="fa fa-download mr-2"></span>Download</a>
+                                            <a href="#hint" data-toggle="modal" data-target="#hint" class="btn btn-outline-secondary btn-shadow" onclick="getHint({{question.Qid}})"><span class="far fa-lightbulb mr-2"></span>Hint</a>
+                                            <div class="input-group mt-3">
+                                                <input type="text" name="flag" class="form-control" placeholder="Enter Flag" aria-label="Enter Flag" aria-describedby="basic-addon2" required>
+                                                <input type="hidden" name="Qid" id="Qid" value={{question.Qid}}>
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-outline-secondary" type="submit">Go!</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </blockquote>
+                                </div>
+                            {% else %}
+                                {# If the file doesn't exist, only show hint and flag submission form #}
+                                <div class="card-header " data-target="#problem_id_{{ question.Qid }}" data-toggle="collapse" aria-expanded="false" aria-controls="problem_id_{{ question.Qid }}">
+                                    {{ question.Qtitle }} <span class="badge">{{ question.points }} points</span>
+                                </div>
+                                <div id="problem_id_{{ question.Qid }}" class="collapse card-body">
+                                    <blockquote class="card-blockquote">
+                                        <div style="display: flex;">
+                                            <h6 class="solvers">Solvers:{{ question.solved_by }} &nbsp;<span class="color_danger">Difficulty:{{ question.category }}</span> </h6>
+                                        </div>
+                                        <p>{{ question.Qdes }}</p>
+                                        <form method="POST" id="my_event_form">
+                                            {% csrf_token %}
+                                            <a href="#hint" data-toggle="modal" data-target="#hint" class="btn btn-outline-secondary btn-shadow" onclick="getHint({{question.Qid}})"><span class="far fa-lightbulb mr-2"></span>Hint</a>
+                                            <div class="input-group mt-3">
+                                                <input type="text" name="flag" class="form-control" placeholder="Enter Flag" aria-label="Enter Flag" aria-describedby="basic-addon2" required>
+                                                <input type="hidden" name="Qid" id="Qid" value={{question.Qid}}>
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-outline-secondary" type="submit">Go!</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </blockquote>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row mt-5 pt-2 hackerFont">
+
+            </div>
+            <div class="row hackerFont justify-content-center mt-5">
+                <div class="col-md-12 pb-2">
+                    <a href="quest/tools" class="text-white p-2" style="background-color:rgba(172, 255, 47, 0.56)">0sint toolkit</a>
+                </div>
+                <div class="col-md-12 pt-2">
+                    Tingkat kesulitan:
+                    <span class="p-1" style="background-color:#17b06b94">Mudah</span>
+                    <span class="p-1" style="background-color:#f9751594">Sedang</span>
+                    <span class="p-1" style="background-color:#ef121b94">Sulit</span>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="hint" tabindex="-1" role="dialog" aria-labelledby="hint label" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p id="hintParagraph">Here goes the hint</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script>
+
+
+       var dataset = [
+       {% for question in questions %}
+                [ {{ question.Easy }}, {{ question.Med }}, {{ question.Hard }}, 0],
+           {% endfor %}
+            ]
+
+            function getBarChartData(i) {
+                return barChartData = {
+                    labels: ['Easy2', 'Medium3', 'Hard5'],
+                    datasets: [{
+                        label: 'Dataset 1',
+                        backgroundColor: [
+                            '#17b06b', '#ffce56', '#ef121b'
+                        ],
+                        borderColor: [
+                            '#17b06b',  '#ffce56', '#ef121b'
+                        ],
+                        borderWidth: 1,
+                        data: dataset[i - 1]
+                    }]
+
+                };
+            }
+
+            window.onload = function() {
+                var numcharts = 4;
+                for (let i = 1; i <= numcharts; i++) {
+                    var ctx = document.getElementById('problem_id_' + i + '_chart').getContext('2d');
+                    window.myBar = new Chart(ctx, {
+                        type: 'bar',
+                        data: getBarChartData(i),
+                        options: {
+                            tooltips: {
+                                enabled: false,
+                            },
+                            responsive: false,
+                            legend: {
+                                display: false,
+                            },
+                            scales: {
+                                yAxes: [{
+                                    display: false
+                                }],
+                                xAxes: [{
+                                    display: false
+                                }]
+                            }
+                        }
+                    });
+                    myBar.canvas.parentNode.style.width = '80px';
+                    myBar.canvas.parentNode.style.height = '15px';
+                }
+            };
+        </script>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+        <script
+			  src="https://code.jquery.com/jquery-3.4.1.js"
+			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+			  crossorigin="anonymous"></script>
+                <script src="{% static 'js/bootstrapNotify.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            <script src="{% static 'js/check.js' %}"></script>
+        <script>
+            $( document ).ready(function() {
+                $('form').submit(function(event) {
+                    console.log("here");
+                    event.preventDefault();
+                    checkAnswer(this);
+                });
+            });
+
+
+        </script>
+
+</body>
+
+</html>

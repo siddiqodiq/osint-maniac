@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>OSINT MANIAC</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href= "{% static 'css/bootstrap4-neon-glow.min.css' %}" >    
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital@1&display=swap" rel="stylesheet">
+
+    <script>
+        (function (w, d, s, o, f, js, fjs) {
+        w["botsonic_widget"] = o;
+        w[o] =
+            w[o] ||
+            function () {
+            (w[o].q = w[o].q || []).push(arguments);
+            };
+        (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+        js.id = o;
+        js.src = f;
+        js.async = 1;
+        fjs.parentNode.insertBefore(js, fjs);
+        })(window, document, "script", "Botsonic", "https://widget.writesonic.com/CDN/botsonic.min.js");
+        Botsonic("init", {
+        serviceBaseUrl: "https://api.botsonic.ai",
+        token: "08d24959-77ed-427f-b0e6-86ee31f885e3",
+        });
+    </script> 
+</head>
+
+<body class="imgloaded">
+
+    <div id="preloader">
+    </div>
+
+    <div id="main">
+        <div class="glitch">
+            <div class="glitch__img"></div>
+            <div class="glitch__img"></div>
+            <div class="glitch__img"></div>
+            <div class="glitch__img"></div>
+            <div class="glitch__img"></div>
+        </div>
+        
+        <div class="navbar-dark text-white mx-auto">
+            <div class="container">
+                <nav class="navbar px-0 navbar-expand-lg navbar-dark mx-auto">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav ml-auto">
+                            <a href="/" class="p-3 text-decoration-none text-success bold">Home</a>
+                            <a href="/about" class="p-3 text-decoration-none text-light bold">About</a>
+                            <a href="/scoreboard" class="p-3 text-decoration-none text-light bold">Scoreboard</a>
+                            <a href="/profil" class="p-3 text-decoration-none text-light bold">Profil</a>
+                            {% if user.is_authenticated %}
+                                <a href="/logout" class="p-3 text-decoration-none text-light bold">Logout</a>
+                            {% else %}
+                                <a href="/login" class="p-3 text-decoration-none text-light bold">Login</a>
+                            {% endif %}            
+                        </div>
+                    </div>
+                </nav>
+
+            </div>
+        </div>
+        
+
+        <div class="jumbotron bg-transparent mb-0 pt-30 radius-0">
+            <div class="container">
+                <div class="row">
+                    <div class="mx-auto">        
+                        <h1 class="display-1 color_danger content__title">🕵️0SINT MANIAC🕵️</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mx-auto mt-lg-2 text-center">
+                        {% if user.is_authenticated %}
+                            <p class="col mt-5 mb-lg-5 text-grey text-spacey hackerFont lead">
+                                Selamat datang, {{ user.username }}! Anda sudah masuk ke dalam OSINT MANIAC.
+                            </p>
+                            <button class="btn btn-outline-success px-3 my-2 ml-0 ml-sm-1 text-left typewriter" onclick="location.href = '{% url 'Quest' %}';">
+                                <h4>QUEST</h4>
+                            </button>
+                        {% else %}
+                            <p class="col mt-5 mb-lg-5 text-grey text-spacey hackerFont lead">
+                                "Dalam dunia siber, jaringan adalah seni, dan informasi adalah mata uang."
+                            </p>
+                            <button class="btn btn-outline-success px-3 my-2 ml-0 ml-sm-1 text-left typewriter" onclick="location.href = '{% url 'login1' %}';">
+                                <h4>Login</h4>
+                            </button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="{% static 'js/preloader.js' %}"></script>
+</body>
+
+</html>
